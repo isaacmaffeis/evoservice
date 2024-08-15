@@ -26,6 +26,13 @@
       <artifactId>log4j-core</artifactId>
       <version>2.23.1</version>
     </dependency>
+    <!-- Mockito 4   -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-inline</artifactId>
+      <version>4.0.0</version>
+      <scope>test</scope>
+    </dependency>
     <!-- asm dependencies    -->
     <dependency>
       <groupId>org.apache.commons</groupId>
