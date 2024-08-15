@@ -8,10 +8,12 @@ COPY evosuite-standalone-runtime-1.2.0.jar app/evosuite-standalone-runtime-1.2.0
 COPY scripts app/scripts
 COPY entrypoint.sh app/script.sh
 
-VOLUME["/app/input"]
-VOLUME["/app/evosuite-files"]
-VOLUME["/app/evosuite-report"]
-VOLUME["/app/evosuite-tests"]
+RUN mkdir -p /app/input
+
+VOLUME ["/app/input"]
+VOLUME ["/app/evosuite-files"]
+VOLUME ["/app/evosuite-report"]
+VOLUME ["/app/evosuite-tests"]
 
 WORKDIR /app
 
