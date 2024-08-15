@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  evosuite:
+    image: evosuite/evosuite:latest-java-8
+    volumes:
+      - ./:/evosuite
