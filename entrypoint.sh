@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# move the input java class into the project
-java -jar app/target/evoservice-1.0-SNAPSHOT-jar-with-dependencies.jar
+INPUT_DIR="input"
+SCRIPT_DIR="scripts"
 
-# Avvia la shell interattiva
+python3 "$SCRIPT_DIR"/file_manager.py "$INPUT_DIR"
+
 exec /bin/sh
-
-

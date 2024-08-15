@@ -1,17 +1,24 @@
 FROM maven:3.8.5-openjdk-8
-
-WORKDIR /app
+FROM python:3.8-slim
 
 COPY pom.xml /app
 COPY src /app/src
-COPY target/evoservice-1.0-SNAPSHOT-jar-with-dependencies.jar app/target/evoservice-1.0-SNAPSHOT-jar-with-dependencies.jar
 COPY evosuite-1.2.0.jar app/evosuite-1.2.0.jar
 COPY evosuite-standalone-runtime-1.2.0.jar app/evosuite-standalone-runtime-1.2.0.jar
+COPY scripts app/scripts
+COPY entrypoint.sh app/script.sh
 
 VOLUME["/app/input"]
 VOLUME["/app/evosuite-files"]
 VOLUME["/app/evosuite-report"]
 VOLUME["/app/evosuite-tests"]
 
+WORKDIR /app
+
+# Make the .sh script executable
+RUN chmod +x script.sh
+
 # Set shell as the default startup command
-CMD ["/bin/sh"]
+#CMD ["/bin/sh"]
+
+ENTRYPOINT ["./script.sh"]
