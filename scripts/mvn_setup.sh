@@ -10,6 +10,8 @@ TARGET_CLASSES="target/classes"
 
 echo "Starting Maven and Java operations..."
 
+cd "$(dirname "$0")/.."
+
 echo "Running mvn install:install-file..."
 mvn install:install-file \
   -Dfile="$JAR_FILE" \
