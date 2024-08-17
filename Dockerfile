@@ -1,4 +1,4 @@
-FROM jdk-8-slim
+FROM openjdk:8-jdk-slim
 FROM python:3.8-slim
 
 # Install Maven
