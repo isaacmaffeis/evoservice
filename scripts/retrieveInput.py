@@ -1,10 +1,5 @@
-#!/usr/bin/env python3
-
-import os
-import shutil
 import logging
 from pathlib import Path
-import sys
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -55,11 +50,8 @@ def retrieve_input(input_dir, output_dir):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python3 file_manager.py <input_dir> <output_dir>")
-        sys.exit(1)
 
-    input_folder = sys.argv[1]
+    input_folder = f"../input"
     output_folder = f"../src/main/java/org/evoservice"
 
     retrieve_input(input_folder, output_folder)
