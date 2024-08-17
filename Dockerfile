@@ -16,4 +16,6 @@ VOLUME ["/app/evosuite-tests"]
 
 WORKDIR /app/scripts
 
+RUN chmod +x build.sh
+
 CMD ["python", "./help.py"]
