@@ -7,7 +7,7 @@ COPY pom.xml /app
 COPY src /app/src
 COPY evosuite-1.2.0.jar app/evosuite-1.2.0.jar
 COPY evosuite-standalone-runtime-1.2.0.jar app/evosuite-standalone-runtime-1.2.0.jar
-COPY scripts app/scripts
+COPY scripts app
 
 VOLUME ["/app/input"]
 VOLUME ["/app/evosuite-files"]
