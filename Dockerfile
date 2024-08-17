@@ -1,5 +1,10 @@
 FROM maven:3.8.4-openjdk-8-slim
-FROM python:3.8-slim
+
+# Instal Python
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /app/input
 
