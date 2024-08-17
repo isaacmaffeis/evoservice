@@ -1,5 +1,8 @@
-FROM maven:3.8.8-jdk-8-slim
+FROM jdk-8-slim
 FROM python:3.8-slim
+
+# Install Maven
+RUN apt-get update && apt-get install -y maven
 
 RUN mkdir -p /app/input
 
