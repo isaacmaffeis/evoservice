@@ -14,8 +14,6 @@ VOLUME ["/app/evosuite-files"]
 VOLUME ["/app/evosuite-report"]
 VOLUME ["/app/evosuite-tests"]
 
-WORKDIR /app/scripts
+WORKDIR /app
 
-RUN chmod +x mvn_setup.sh
-
-CMD ["python", "./help.py"]
+CMD ["python", "./scripts/help.py"]

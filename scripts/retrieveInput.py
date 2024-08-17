@@ -51,7 +51,7 @@ def retrieve_input(input_dir, output_dir):
 
 if __name__ == "__main__":
 
-    input_folder = f"../input"
-    output_folder = f"../src/main/java/org/evoservice"
+    input_folder = f"./input"
+    output_folder = f"./src/main/java/org/evoservice"
 
     retrieve_input(input_folder, output_folder)
