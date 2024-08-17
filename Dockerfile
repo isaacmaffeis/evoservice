@@ -1,6 +1,6 @@
 FROM maven:3.8.4-openjdk-8-slim
 
-# Instal Python
+# Install Python
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
     apt-get clean && \
@@ -21,4 +21,4 @@ VOLUME ["/app/evosuite-tests"]
 
 WORKDIR /app
 
-CMD ["python", "./scripts/help.py"]
+CMD ["python3", "./scripts/help.py"]

@@ -13,7 +13,7 @@ def print_help():
        - To do this, run the retrieveInput.py script
 
     3. Select the Script to Execute:
-       - Select one of the following scripts to execute:
+       - From the ./script directory select one of the following to execute:
          1. help.py: show this message.
          2. retrieveInput.py: retrieve the Java file and inject the class into
           the application for further processing.
