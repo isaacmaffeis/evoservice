@@ -1,9 +1,6 @@
 FROM maven:3.8.4-openjdk-8-slim
 FROM python:3.8-slim
 
-# Install Maven
-RUN apt-get install -y maven
-
 RUN mkdir -p /app/input
 
 COPY pom.xml /app
