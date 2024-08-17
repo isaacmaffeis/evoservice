@@ -7,7 +7,7 @@ COPY pom.xml /app
 COPY src /app/src
 COPY evosuite-1.2.0.jar app/evosuite-1.2.0.jar
 COPY evosuite-standalone-runtime-1.2.0.jar app/evosuite-standalone-runtime-1.2.0.jar
-COPY scripts app
+COPY scripts /app/scripts
 
 VOLUME ["/app/input"]
 VOLUME ["/app/evosuite-files"]
@@ -16,4 +16,4 @@ VOLUME ["/app/evosuite-tests"]
 
 WORKDIR /app
 
-CMD ["python", "help.py"]
+CMD ["python", "./scripts/help.py"]
