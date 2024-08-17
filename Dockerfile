@@ -16,4 +16,4 @@ VOLUME ["/app/evosuite-tests"]
 
 WORKDIR /app
 
-CMD ["python", "scripts/help.py"]
+CMD ["python", "help.py"]
