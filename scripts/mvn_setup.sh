@@ -21,7 +21,7 @@ mvn install:install-file \
   -Dpackaging="$PACKAGING"
 
 echo "Running mvn compile..."
-mvn compile
+mvn clean compile
 
 echo "Copying the runtime dependencies inside target..."
 mvn dependency:copy-dependencies -DincludeScope=runtime

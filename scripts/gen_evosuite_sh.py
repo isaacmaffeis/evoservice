@@ -34,7 +34,7 @@ def generate_script(root_path, script_path, extra_args):
                             class_name = f"{folder_name}.{file_name}"
                             logger.info(f"class_name: {class_name}")
 
-                            command = f"java -jar evosuite.jar -class org.evosuite.{class_name}"
+                            command = f"java -jar evosuite-1.2.0.jar -class org.evoservice.{class_name}"
                             logger.info(f"command without args: {command}")
 
                             if extra_args:
