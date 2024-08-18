@@ -24,7 +24,7 @@ WORKDIR /app
 
 # make .sh scripts executable
 RUN chmod +x ./scripts/mvn_setup.sh
-RUN chmdo +x ./scripts/gen_evosuite.sh
-RUN chmdo +x ./scripts/tests.sh
+RUN chmod +x ./scripts/gen_evosuite.sh
+RUN chmod +x ./scripts/tests.sh
 
 CMD ["python3", "./scripts/help.py"]
