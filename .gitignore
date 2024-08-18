@@ -43,3 +43,5 @@ build/
 #./evosuite-report/
 #./evosuite-tests/
 /venv/
+*.java
+!Main.java

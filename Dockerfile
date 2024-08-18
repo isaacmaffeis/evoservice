@@ -6,6 +6,8 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y libfreetype6 libfontconfig1
+
 RUN mkdir -p /app/input
 RUN mkdir -p /app/target
 
