@@ -42,3 +42,4 @@ build/
 #./evosuite-files/
 #./evosuite-report/
 #./evosuite-tests/
+/venv/

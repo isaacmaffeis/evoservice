@@ -7,6 +7,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /app/input
+RUN mkdir -p /app/target
 
 COPY pom.xml /app
 COPY src /app/src
@@ -21,6 +22,9 @@ VOLUME ["/app/evosuite-tests"]
 
 WORKDIR /app
 
+# make .sh scripts executable
 RUN chmod +x ./scripts/mvn_setup.sh
+RUN chmdo +x ./scripts/gen_evosuite.sh
+RUN chmdo +x ./scripts/tests.sh
 
 CMD ["python3", "./scripts/help.py"]

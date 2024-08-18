@@ -9,9 +9,10 @@ PACKAGING="jar"
 DEPENDENCY_JAR="target/dependency/commons-collections-3.2.2.jar"
 TARGET_CLASSES_PATH="target/classes"
 
-echo "Maven and Evosuite setup"
+echo "# mvn_setup.sh"
+echo "## Maven and Evosuite setup"
 
-echo "Running mvn install:install-file..."
+echo "Installing evosuite-standalone-runtime-1.2.0.jar..."
 mvn install:install-file \
   -Dfile="$JAR_EVOSUITE_RUNTIME" \
   -DgroupId="$GROUP_ID" \
@@ -22,10 +23,10 @@ mvn install:install-file \
 echo "Running mvn compile..."
 mvn compile
 
-echo "Running mvn dependency:copy-dependencies..."
+echo "Copying the runtime dependencies inside target..."
 mvn dependency:copy-dependencies -DincludeScope=runtime
 
-echo "Running java -jar with Evosuite..."
+echo "Generating the evosuite.properties file in ./evosuite-files..."
 java -jar "$JAR_EVOSUITE" -setup "$TARGET_CLASSES_PATH" "$DEPENDENCY_JAR"
 
-echo "Process completed."
+echo "mvn_setup.sh process completed."
