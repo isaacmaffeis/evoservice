@@ -21,4 +21,6 @@ VOLUME ["/app/evosuite-tests"]
 
 WORKDIR /app
 
+RUN chmod +x ./scripts/mvn_setup.sh
+
 CMD ["python3", "./scripts/help.py"]
