@@ -19,7 +19,7 @@ VOLUME ["/app/input"]
 VOLUME ["/app/evosuite-files"]
 VOLUME ["/app/evosuite-report"]
 VOLUME ["/app/evosuite-tests"]
-VOLUME ["/app/scripts"]
+VOLUME ["/app/scripts/gen_evosuite.sh"]
 
 WORKDIR /app
 
