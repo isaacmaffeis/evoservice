@@ -41,8 +41,9 @@ def retrieve_input(input_dir, output_dir):
         with target_path.open('w') as file:
             file.writelines(file_content)
 
-        java_file.unlink()
-        logger.info(f"File moved successfully in: {target_path}")
+        #java_file.unlink()
+        #logger.info(f"File moved successfully in: {target_path}")
+        logger.info(f"File copied successfully in: {target_path}")
 
     except OSError as e:
         logger.error(f"An error occurred while moving the file to: {package_path}")

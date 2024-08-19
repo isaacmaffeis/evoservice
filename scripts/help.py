@@ -10,14 +10,11 @@ def print_help():
     1. Place a Java File in the Input Directory
 
     2. Inject the Java Class into the Application:
-       - To do this, run the retrieveInput.py script
+       - To do this, run the retrieve_input.py script
+         'python3 ./scripts/retrieve_input.py'
 
     3. Select the Script to Execute:
-       - From the ./script directory run the following scripts inorder:
-         1. retrieveInput.py: retrieve the Java file and inject the class into
-          the application for further processing.
-           'python3 ./scripts/retrieveInput.py'
-         2. //TO-DO
+         //TO-DO
     
     4. Setup Maven and Evosuite:
         - You can do it manually with the following steps:

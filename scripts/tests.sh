@@ -9,6 +9,10 @@ mvn install:install-file -Dfile="evosuite-standalone-runtime-1.2.0.jar" -DgroupI
 echo "Copying Generated Test Cases into the project..."
 cp -r evosuite-tests/* src/test/java/
 
+echo "retrieve input..."
+python3 ./scripts/retrieve_input.py
+mvn compile
+
 echo "Running the mvn test phase..."
 mvn test
 
