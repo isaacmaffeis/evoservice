@@ -41,10 +41,14 @@ def print_help():
           'java -jar evosuite-1.2.0.jar -help'
         
     6. Test the application
-        - Copy Generated Test Cases into the project:
-          'xcopy evosuite-tests\\* src\\test\\java /E /I /Y'
-          and then run the Test suite:
+        - Install the evosuite-standalone-runtime:
+           mvn install:install-file -Dfile="evosuite-standalone-runtime-1.2.0.jar" -DgroupId="org.evosuite" -DartifactId="evosuite-standalone-runtime" -Dversion="1.2.0" -Dpackaging="jar"
+          Copy Generated Test Cases into the project:
+           cp -r evosuite-tests/* src/test/java/
+          and then Run the Test suite:
           'mvn test'
+        - Or run the tests.sh script with: 
+          './scripts/tests.sh'
          
     
     EvoService uses the EvoSuite services,
