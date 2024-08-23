@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "evoservice-1.2.0" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "evoservice-1.2.0" ]
     
 jobs:
   docker:
@@ -27,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: isaacmaffeis/evoservice:latest
+          tags: isaacmaffeis/evoservice-1.2.0:latest
