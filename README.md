@@ -38,10 +38,6 @@ To get started, please follow these steps:
 
 4. Setup Maven and Evosuite:
     - You can do it manually with the following steps:
-        - Install the Evosuite Runtime JAR: 
-          ```shell
-          mvn install:install-file -Dfile="evosuite-standalone-runtime-1.2.0.jar" -DgroupId="org.evosuite" -DartifactId="evosuite-standalone-runtime" -Dversion="1.2.0" -Dpackaging="jar"
-          ```
         - Compile the Maven Project: 
           ```shell
           mvn compile
@@ -52,7 +48,7 @@ To get started, please follow these steps:
           ```
         - Setup Evosuite:
           ```shell
-          java -jar evosuite-standalone-runtime-1.2.0.jar -setup target/classes target/dependency/commons-collections-3.2.2.jar
+          java -jar evosuite-standalone-runtime-1.0.6.jar -setup target/classes target/dependency/commons-collections-3.2.2.jar
           ```
     - Or simply run the mvn_setup shell script:
       ```shell
@@ -62,7 +58,7 @@ To get started, please follow these steps:
 5. Generate Test Cases:
     - To generate test cases for a specific class, run the following command:
       ```shell
-      java -jar evosuite-standalone-runtime-1.2.0.jar -class <inputFile>' -<params>
+      java -jar evosuite-standalone-runtime-1.0.6.jar -class <inputFile>' -<params>
       ```
     - Or run the python script gen_evosuite_sh.py to generate the shell 
       script with the desired command:
@@ -75,15 +71,11 @@ To get started, please follow these steps:
        ```
     - run evosuite app help to see all the available options and params
       ```shell
-      java -jar evosuite-1.2.0.jar -help
+      java -jar evosuite-1.0.6.jar -help
       ```
     
 6. Test the application
-    - Install the evosuite-standalone-runtime:
-       ```shell
-       mvn install:install-file -Dfile="evosuite-standalone-runtime-1.2.0.jar" -DgroupId="org.evosuite" -DartifactId="evosuite-standalone-runtime" -Dversion="1.2.0" -Dpackaging="jar"
-       ```
-      Copy Generated Test Cases into the project:
+    - Copy Generated Test Cases into the project:
        ```shell
        cp -r evosuite-tests/* src/test/java/
        ```

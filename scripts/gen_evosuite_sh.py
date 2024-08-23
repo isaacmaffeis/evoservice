@@ -34,7 +34,7 @@ def generate_script(root_path, script_path, extra_args):
                             class_name = f"{folder_name}.{file_name}"
                             logger.info(f"class_name: {class_name}")
 
-                            command = f"java -jar evosuite-1.2.0.jar -class org.evoservice.{class_name}"
+                            command = f"java -jar evosuite-1.0.6.jar -class org.evoservice.{class_name}"
                             logger.info(f"command without args: {command}")
 
                             if extra_args:
@@ -42,7 +42,7 @@ def generate_script(root_path, script_path, extra_args):
 
                             command += "\n"
 
-                            script_file.write(f'echo "Running evosuite-1.2.0 on {class_name}..."\n')
+                            script_file.write(f'echo "Running evosuite-1.0.6 on {class_name}..."\n')
                             script_file.write(command)
                             logger.info(f"script write: {command}")
         script_file.write('\necho "gen_evosuite.sh process completed."\n')
