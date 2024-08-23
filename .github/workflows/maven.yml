@@ -27,8 +27,6 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
-    - name: install evosuite runtime
-      run: mvn --batch-mode install:install-file -Dfile="evosuite-standalone-runtime-1.2.0.jar" -DgroupId="org.evosuite" -DartifactId="evosuite-standalone-runtime" -Dversion="1.2.0" -Dpackaging="jar"
     - name: Test with Maven
       run: mvn --batch-mode clean verify
 

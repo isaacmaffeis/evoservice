@@ -18,32 +18,30 @@ def print_help():
     
     4. Setup Maven and Evosuite:
         - You can do it manually with the following steps:
-            - Install the Evosuite Runtime JAR: 
-              'mvn install:install-file -Dfile="evosuite-standalone-runtime-1.2.0.jar" -DgroupId="org.evosuite" -DartifactId="evosuite-standalone-runtime" -Dversion="1.2.0" -Dpackaging="jar"'
             - Compile the Maven Project: 
               'mvn compile'
             - Copy Maven Dependencies:
               'mvn dependency:copy-dependencies -DincludeScope=runtime'
             - Setup Evosuite:
-              'java -jar evosuite-standalone-runtime-1.2.0.jar -setup target/classes target/dependency/commons-collections-3.2.2.jar'
+              'java -jar evosuite-standalone-runtime-1.0.6.jar -setup target/classes target/dependency/commons-collections-3.2.2.jar'
         - Or simply run the mvn_setup shell script:
           './scripts/mvn_setup.sh'
     
     5. Generate Test Cases:
         - To generate test cases for a specific class, run the following command:
-          'java -jar evosuite-standalone-runtime-1.2.0.jar -class <inputFile>' -<params>
+          'java -jar evosuite-standalone-runtime-1.0.6.jar -class <inputFile>' -<params>
         - Or run the python script gen_evosuite_sh.py to generate the shell 
           script with the desired command:
            'python3 gen_evosuite_sh.py -<params>'
            and then proceed to execute it with:
            './scripts/gen_evosuite.sh'
-        - run evosuite app help to see all the available options and params
-          'java -jar evosuite-1.2.0.jar -help'
+        - run evosuite app help to see all the available options:
+          'java -jar evosuite-1.0.6.jar -help'
+          and to see all the evosuite params:
+          'java -jar evosuite-1.0.6.jar -listParameters '
         
     6. Test the application
-        - Install the evosuite-standalone-runtime:
-           mvn install:install-file -Dfile="evosuite-standalone-runtime-1.2.0.jar" -DgroupId="org.evosuite" -DartifactId="evosuite-standalone-runtime" -Dversion="1.2.0" -Dpackaging="jar"
-          Copy Generated Test Cases into the project:
+        - Copy Generated Test Cases into the project:
            cp -r evosuite-tests/* src/test/java/
           and then Run the Test suite:
           'mvn test'
