@@ -18,6 +18,11 @@ def retrieve_input(input_dir, output_dir):
         file_name = java_file.name
         logger.info(f"Java File found: {file_name}")
 
+        if(file_name.endswith('_Exe.java')):
+            logger.info(f"Skip and delete the: {file_name}")
+            java_file.unlink()
+            break
+
         package_name = file_name.rsplit('.', 1)[0]
         package_name = package_name.rsplit('_ASM', 1)[0]
         package_name = package_name[0].lower() + package_name[1:]
