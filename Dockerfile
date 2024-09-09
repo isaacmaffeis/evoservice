@@ -27,6 +27,9 @@ VOLUME ["/app/output"]
 
 WORKDIR /app
 
+# Download the Maven dependency (resolve and pre-load all the dependency)
+RUN mvn dependency:resolve
+
 # make .sh scripts executable
 RUN chmod +x ./scripts/mvn_setup.sh
 RUN chmod +x ./scripts/gen_evosuite.sh
