@@ -15,6 +15,9 @@ COPY src /app/src
 COPY evosuite-1.0.6.jar app/evosuite-1.0.6.jar
 COPY scripts /app/scripts
 
+# Download the Maven dependency (resolve and pre-load all the dependency)
+RUN mvn dependency:resolve
+
 VOLUME ["/app/input"]
 VOLUME ["/app/evosuite-files"]
 VOLUME ["/app/evosuite-report"]
