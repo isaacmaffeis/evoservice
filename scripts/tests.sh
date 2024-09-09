@@ -10,7 +10,7 @@ echo "Running the mvn test phase..."
 if mvn test; then
     echo "Tests passed. Exporting the tests..."
     mkdir -p ./output/
-    cp -r evosuite-tests/* output/
+    cp -r evosuite-tests/* output/org/evoservice/
 else
     echo "Tests failed. Export aborted."
 fi
