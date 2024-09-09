@@ -24,7 +24,7 @@ def generate_script(root_path, script_path, extra_args):
         for folder in root_path.rglob('*'):
                 if folder.is_dir():
                     folder_name = folder.name[0].lower() + folder.name[1:]
-                    for file in folder.glob('*.java'):
+                    for file in folder.glob('*_ASM.java'):
                         file_name = file.stem  # file name without extension
 
                         if file_name != "Main":
