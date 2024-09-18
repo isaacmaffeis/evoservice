@@ -10,7 +10,7 @@ echo "Running the mvn test phase..."
 if mvn test; then
     echo "Tests passed. Exporting the tests..."
     mkdir -p ./output/
-    cp -r evosuite-tests/* output/
+    find evosuite-tests/ -type f -name "*_ASM_ESTest.java" -exec cp {} output/ \;
 else
     echo "Tests failed. Export aborted."
 fi
