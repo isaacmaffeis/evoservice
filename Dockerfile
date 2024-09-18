@@ -21,6 +21,7 @@ VOLUME ["/app/evosuite-report"]
 VOLUME ["/app/evosuite-tests"]
 VOLUME ["/app/scripts/gen_evosuite.sh"]
 VOLUME ["/app/output"]
+VOLUME ["/root/.m2"]
 
 WORKDIR /app
 
