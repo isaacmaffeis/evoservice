@@ -32,11 +32,8 @@ To get started, please follow these steps:
      ```shell
      python3 ./scripts/retrieve_input.py
      ```
-
-3. Select the Script to Execute:
-     //TO-DO
-
-4. Setup Maven and Evosuite:
+     
+3. Setup Maven and Evosuite:
     - You can do it manually with the following steps:
         - Compile the Maven Project: 
           ```shell
@@ -55,7 +52,7 @@ To get started, please follow these steps:
       ./scripts/mvn_setup.sh
       ```
 
-5. Generate Test Cases:
+4. Generate Test Cases:
     - To generate test cases for a specific class, run the following command:
       ```shell
       java -jar evosuite-standalone-runtime-1.0.6.jar -class <inputFile>' -<params>
@@ -74,7 +71,7 @@ To get started, please follow these steps:
       java -jar evosuite-1.0.6.jar -help
       ```
     
-6. Test the application
+5. Test the application
     - Copy Generated Test Cases into the project:
        ```shell
        cp -r evosuite-tests/* src/test/java/
@@ -113,10 +110,12 @@ services:
       - ./evoservice/evosuite-files:/app/evosuite-files
       - ./evoservice/evosuite-report:/app/evosuite-report
       - ./evoservice/evosuite-tests:/app/evosuite-tests
-      - ./evoservice/input:/app/input
       - ./evoservice/target:/app/target
       - ./evoservice/scripts/gen_evosuite.sh:/app/scripts/gen_evosuite.sh
       - ./evoservice/src:/app/src
+      - ./evoservice/m2:/root/.m2
+      - ./evoservice/input:/app/input
+      - ./evoservice/output:/app/output
 ```
 
 ### Running the Container
@@ -131,7 +130,7 @@ You can execute the following commands to run the various scripts within the con
   ```
 - Generate the EvoSuite shell script:
   ```shell
-  docker compose run --rm evoservice python3 scripts/gen_evosuite_sh.py
+  docker compose run --rm evoservice python3 scripts/gen_evosuite_sh.py -criterion LINE:BRANCH -Dminimize=true -Dassertion_strategy=all
   ```
 - Execute the generated script:
   ```shell
