@@ -22,3 +22,5 @@ asm_file_no_extension="${asm_file%.java}"
 echo "Running evosuite-1.0.6 on org.evoservice.$package_dir.$asm_file_no_extension"
 echo "java -jar evosuite-1.0.6.jar -class org.evoservice.$package_dir.$asm_file_no_extension" $*
 java -jar evosuite-1.0.6.jar -class org.evoservice."$package_dir"."$asm_file_no_extension" $*
+
+exit 0
