@@ -4,7 +4,7 @@ echo "# tests.sh"
 echo "## Test the generated test suite"
 
 echo "Copying Generated Test Cases into the project..."
-cp -r evosuite-tests/* src/test/java/
+cp -r evosuite-tests/* src/test/java/ || { echo "Error: Copying filed"; exit 1; }
 
 echo "Running the mvn test phase..."
 if mvn test; then
@@ -13,9 +13,8 @@ if mvn test; then
     find evosuite-tests/ -type f -name "*_ASM_ESTest.java" -exec cp {} output/ \;
 else
     echo "Tests failed. Export aborted."
+    exit 1
 fi
 
-echo "Cleaning the project"
-python3 scripts/clean.py
-
-echo "tests.sh process completed."
+echo "tests.sh completed."
+exit 0
