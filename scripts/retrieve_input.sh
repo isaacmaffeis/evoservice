@@ -1,7 +1,7 @@
 #!/bin/bash
 #retrieve_input.sh
 
-echo "# retrive_input.sh"
+echo "# retrieve_input.sh"
 
 [ $# -gt 2 ] && { echo "Error: wrong number of arguments, max is 2"; exit 1; }
 
@@ -49,4 +49,5 @@ for java_file in "${java_files[@]}"; do
 
 done
 
+echo "# retrieve_input.sh completed"
 exit 0

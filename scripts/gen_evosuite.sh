@@ -23,4 +23,5 @@ echo "Running evosuite-1.0.6 on org.evoservice.$package_dir.$asm_file_no_extensi
 echo "java -jar evosuite-1.0.6.jar -class org.evoservice.$package_dir.$asm_file_no_extension" $*
 java -jar evosuite-1.0.6.jar -class org.evoservice."$package_dir"."$asm_file_no_extension" $*
 
+echo "# gen_evosuite.sh completed"
 exit 0

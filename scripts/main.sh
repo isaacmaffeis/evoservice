@@ -20,4 +20,5 @@ execute_script() {
 execute_script "retrieve_input.sh"
 execute_script "mvn_setup.sh"
 execute_script "gen_evosuite.sh" "/app/src/main/java/org/evoservice/" "-criterion LINE:BRANCH" "-Dminimize=true" "-Dassertion_strategy=all"
+execute_script "test.sh"
 execute_script "clean.sh"
