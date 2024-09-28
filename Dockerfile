@@ -24,7 +24,7 @@ RUN mvn dependency:resolve
 
 RUN chmod +x ./scripts/main.sh
 RUN chmod +x ./scripts/help.sh
-RUN chmdo +x ./scripts/retrieve_input.sh
+RUN chmod +x ./scripts/retrieve_input.sh
 RUN chmod +x ./scripts/mvn_setup.sh
 RUN chmod +x ./scripts/gen_evosuite.sh
 RUN chmod +x ./scripts/tests.sh
