@@ -1,10 +1,19 @@
 #!/bin/bash
 #main.sh
 
+echo "
+     _____                                _
+    | ____|_   _____  ___  ___ _ ____   _(_) ___ ___
+    |  _| \ \ / / _ \/ __|/ _ \ '__\ \ / / |/ __/ _ \
+    | |___ \ V / (_) \__ \  __/ |   \ V /| | (_|  __/
+    |_____| \_/ \___/|___/\___|_|    \_/ |_|\___\___|
+
+    "
+
 execute_script() {
   local script_name=$1
   shift
-
+  echo "####################################"
   echo "Starting $script_name"
   /app/scripts/"$script_name" "$@"
   exit_code=$?
@@ -15,6 +24,7 @@ execute_script() {
     echo "$script_name terminated with errors (exit code: $exit_code)"
     exit 1
   fi
+  echo "####################################"
 }
 
 execute_script "retrieve_input.sh"
