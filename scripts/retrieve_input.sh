@@ -27,7 +27,7 @@ for java_file in "${java_files[@]}"; do
   echo "Processing $java_file_name in the $input_dir directory..."
   echo "File name: $java_file_name_no_extension"
 
-  if [[ "$java_file_name_no_extension" =~ _EXE$ ]]; then
+  if [[ "$java_file_name_no_extension" =~ _Exe$ ]]; then
     rm "$java_file" || { echo "Error: deleting $java_file operation failed"; exit 1; }
     echo "File $java_file_name deleted."
     continue
