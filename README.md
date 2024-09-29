@@ -15,82 +15,38 @@ Before you begin, ensure you have the following installed on your system:
 To get started, please follow these steps:
 
 ### Cloning the Repository
-1. Open PowerShell or your preferred terminal and clone the repository:
-    ```shell
-    git clone https://github.com/isaacmaffeis/asmetal2java.git
+1. Open GitBash and clone the repository:
+    ```bash
+    git clone https://github.com/isaacmaffeis/evoservice.git
     ```
 
 2. Navigate into the project directory:
-    ```shell
+    ```bash
     cd ./evoservice
     ```
 ### Start the application
 3. Place a Java File in the Input Directory
 
-4. Inject the Java Class into the Application:
-   - To do this, run the retrieve_input.py script
-     ```shell
-     python3 ./scripts/retrieve_input.py
+4. Run the application with:
+    ```bash
+   ./scripts/main.sh
      ```
-     
-3. Setup Maven and Evosuite:
-    - You can do it manually with the following steps:
-        - Compile the Maven Project: 
-          ```shell
-          mvn compile
-          ```
-        - Copy Maven Dependencies:
-          ```shell
-          mvn dependency:copy-dependencies -DincludeScope=runtime
-          ```
-        - Setup Evosuite:
-          ```shell
-          java -jar evosuite-standalone-runtime-1.0.6.jar -setup target/classes target/dependency/commons-collections-3.2.2.jar
-          ```
-    - Or simply run the mvn_setup shell script:
-      ```shell
-      ./scripts/mvn_setup.sh
-      ```
 
-4. Generate Test Cases:
-    - To generate test cases for a specific class, run the following command:
-      ```shell
-      java -jar evosuite-standalone-runtime-1.0.6.jar -class <inputFile>' -<params>
-      ```
-    - Or run the python script gen_evosuite_sh.py to generate the shell 
-      script with the desired command:
-       ```shell
-       python3 gen_evosuite_sh.py -<params>
-       ```
-       and then proceed to execute it with:
-       ```shell
-       ./scripts/gen_evosuite.sh
-       ```
-    - run evosuite app help to see all the available options and params
-      ```shell
-      java -jar evosuite-1.0.6.jar -help
-      ```
-    
-5. Test the application
-    - Copy Generated Test Cases into the project:
-       ```shell
-       cp -r evosuite-tests/* src/test/java/
-       ```
-      and then Run the Test suite:
-      ```shell
-      mvn test
-      ```
-    - Or run the tests.sh script with: 
-      ```shell
-      ./scripts/tests.sh
-      ```
-     
+The script is already designed to integrate with an Abstract State Machine (ASM).
+
+### Breakdown of the Script Workflow:
+1. retrieve_input.sh : Inject the Java Class into the Application.
+2. mvn_setup.sh : Setup Maven and Evosuite.
+3. gen_evosuite.sh : Generate Test Cases.
+4. tests.sh : Test the application.
+5. clean.sh : Clean the folders.
+   
 EvoService uses the EvoSuite services,
  see https://github.com/EvoSuite/evosuite for further information.
  
-If you want to read this message run the help.py script with:
-  ```shell
-  python3 ./scripts/help.py
+If you want to read this message run the help.sh script with:
+  ```bash
+  ./scripts/help.py
   ```
 
 ## Docker Support
@@ -111,7 +67,6 @@ services:
       - ./evoservice/evosuite-report:/app/evosuite-report
       - ./evoservice/evosuite-tests:/app/evosuite-tests
       - ./evoservice/target:/app/target
-      - ./evoservice/scripts/gen_evosuite.sh:/app/scripts/gen_evosuite.sh
       - ./evoservice/src:/app/src
       - ./evoservice/m2:/root/.m2
       - ./evoservice/input:/app/input
@@ -120,23 +75,7 @@ services:
 
 ### Running the Container
 You can execute the following commands to run the various scripts within the container:
-- Inject the Java class:
+- Run the application:
   ```shell
-  docker compose run --rm evoservice python3 ./scripts/retrieve_input.py
-  ```
-- Set up Maven and EvoSuite:
-  ```shell
-  docker compose run --rm evoservice ./scripts/mvn_setup.sh
-  ```
-- Generate the EvoSuite shell script:
-  ```shell
-  docker compose run --rm evoservice python3 scripts/gen_evosuite_sh.py -criterion LINE:BRANCH -Dminimize=true -Dassertion_strategy=all
-  ```
-- Execute the generated script:
-  ```shell
-  docker compose run --rm evoservice ./scripts/gen_evosuite.sh
-  ```
-- Run the test suite:
-  ```shell
-  docker compose run --rm evoservice ./scripts/tests.sh
+  docker compose run --rm evoservice ./scripts/main.sh
   ```
