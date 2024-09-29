@@ -9,7 +9,6 @@ This project streamlines the process of setting up and using EvoSuite, allowing 
 Before you begin, ensure you have the following installed on your system:
 - java 8
 - maven
-- python 3
 
 ## How to start
 To get started, please follow these steps:
@@ -31,7 +30,7 @@ To get started, please follow these steps:
     ```bash
    ./scripts/main.sh
      ```
-The script is already designed to integrate with an Abstract State Machine (ASM).
+    The script is already designed to integrate with an Abstract State Machine (ASM).
 
 ### Breakdown of the Script Workflow:
 1. retrieve_input.sh : Inject the Java Class into the Application.
