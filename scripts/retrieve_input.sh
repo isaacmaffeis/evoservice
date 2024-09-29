@@ -5,8 +5,8 @@ echo "# retrieve_input.sh"
 
 [ $# -gt 2 ] && { echo "Error: wrong number of arguments, max is 2"; exit 1; }
 
-input_dir=${1:-"/app/input"}
-output_dir=${2:-"/app/src/main/java/org/evoservice"}
+input_dir=${1:-"./input"}
+output_dir=${2:-"./src/main/java/org/evoservice"}
 
 [ ! -d "$input_dir" ] && { echo "Error: $input_dir not found."; exit 1; }
 
