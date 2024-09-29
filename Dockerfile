@@ -28,5 +28,6 @@ RUN chmod +x ./scripts/retrieve_input.sh
 RUN chmod +x ./scripts/mvn_setup.sh
 RUN chmod +x ./scripts/gen_evosuite.sh
 RUN chmod +x ./scripts/tests.sh
+RUN chmod +x ./scripts/clean.sh
 
 CMD ["./scripts/help.sh"]
