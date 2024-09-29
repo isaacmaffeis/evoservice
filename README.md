@@ -31,7 +31,6 @@ To get started, please follow these steps:
     ```bash
    ./scripts/main.sh
      ```
-
 The script is already designed to integrate with an Abstract State Machine (ASM).
 
 ### Breakdown of the Script Workflow:
@@ -46,7 +45,7 @@ EvoService uses the EvoSuite services,
  
 If you want to read this message run the help.sh script with:
   ```bash
-  ./scripts/help.py
+  ./scripts/help.sh
   ```
 
 ## Docker Support
